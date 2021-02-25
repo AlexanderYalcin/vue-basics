@@ -5,14 +5,22 @@ const app = Vue.createApp({
       name: '',
     };
   },
+  watch: {
+    counter(value) {
+      console.log('counter() running...');
+      if (value > 50 || value < -50) {
+        this.counter = 0;
+      }
+    },
+  },
   computed: {
     fullname() {
-      console.log('Running...');
+      console.log('fullname() running...');
       if (this.name === '') {
         return '';
       }
       return this.name + ' ' + 'Yalcin';
-    }
+    },
   },
   methods: {
     resetInput() {
