@@ -5,6 +5,15 @@ const app = Vue.createApp({
       name: '',
     };
   },
+  computed: {
+    fullname() {
+      console.log('Running...');
+      if (this.name === '') {
+        return '';
+      }
+      return this.name + ' ' + 'Yalcin';
+    }
+  },
   methods: {
     resetInput() {
       this.name = '';
