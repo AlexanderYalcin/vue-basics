@@ -18,20 +18,14 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(10)">Add</button>
-      <button v-on:click.middle="reduce(10)">
-        Subtract(middle mouse button)
-      </button>
+      <button @click="add(10)">Add</button>
+      <button @click.middle="reduce(10)">Subtract(middle mouse button)</button>
       <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-      <input
-        type="text"
-        v-model="name"
-        v-on:keyup.enter="confirmInput"
-      />
-      <button v-on:click="resetInput">Reset Input</button>
+      <input type="text" v-model="name" @keyup.enter="confirmInput" />
+      <button @click="resetInput">Reset Input</button>
       <p>Your Name: {{ fullname }}</p>
-      <form v-on:submit.prevent="submitForm">
+      <form @submit.prevent="submitForm">
         <input type="text" />
         <button>Sign Up</button>
       </form>
